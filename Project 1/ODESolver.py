@@ -119,13 +119,13 @@ def rk (iteration, grid, mass, a, b, front_stiff, rear_stiff, yaw_inertia, car_v
 y_20, psi_20, lat_accel_20, position_x_20, position_y_20, velocity_x_20, velocity_y_20, time_20 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 20, 0.1)
 y_50, psi_50, lat_accel_50, position_x_50, position_y_50,velocity_x_50, velocity_y_50, time_50 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 50, 0.1)
 y_75, psi_75, lat_accel_75, position_x_75, position_y_75,velocity_x_75, velocity_y_75, time_75 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 75, 0.1)
-y_100, psi_100, lat_accel_100, position_x_100, position_y_100,velocity_x_100, velocity_y_100, time_100 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 100, 0.1)
-y_200, psi_200, lat_accel_200, position_x_20, position_y_20,velocity_x_200, velocity_y_200, time_200 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 200, 0.1)
+y_100, psi_100, lat_accel_100, position_x_100, position_y_100,velocity_x_100, velocity_y_100, time_100 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 100, 0.5)
+y_200, psi_200, lat_accel_200, position_x_200, position_y_200,velocity_x_200, velocity_y_200, time_200 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 200, 0.1)
 y_300, psi_300, lat_accel_300, position_x_300, position_y_300,velocity_x_300, velocity_y_300, time_300 = rk(1000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 300, 0.1)
 
 
 
-fig, axs = plt.subplots(3, figsize=(10,8))
+fig, axs = plt.subplots(3, figsize=(1,7))
 axs[0].set_title('Lateral acceleration vs time (Euler)')
 axs[0].set_xlabel("Time (s)")
 axs[0].set_ylabel("Lateral Acceleration (m/s^2)")
@@ -153,7 +153,7 @@ axs[1].legend(loc="upper right")
 axs[2].set_title('Absolute position of Car')
 axs[2].set_xlabel("X (m)")
 axs[2].set_ylabel("Y (m)")
-axs[2].plot(position_x_100, position_y_100, label = "100 km/h")
+axs[2].plot(position_x_20, position_y_20, label = "100 km/h")
 
 axs[2].legend()
 axs[2].legend(loc="upper right")
