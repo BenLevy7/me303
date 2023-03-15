@@ -114,14 +114,12 @@ def rk (iteration, grid, mass, a, b, front_stiff, rear_stiff, yaw_inertia, car_v
 
     return y, psi, lateral_acceleration,position_x,position_y, velocity_x, velocity_y, time
 
+y_200, psi_200, lat_accel_200, position_x_200, position_y_200,velocity_x_200, velocity_y_200, time_200 = rk(5000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 200, 0.1)
+y_220, psi_220, lat_accel_220, position_x_220, position_y_220,velocity_x_220, velocity_y_220, time_220 = rk(5000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 220, 0.1)
+y_234, psi_234, lat_accel_234, position_x_234, position_y_234,velocity_x_234, velocity_y_234, time_234 = rk(5000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 234, 0.1)
+y_250, psi_250, lat_accel_250, position_x_250, position_y_250,velocity_x_250, velocity_y_250, time_250 = rk(5000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 250, 0.1)
+y_300, psi_300, lat_accel_300, position_x_300, position_y_300,velocity_x_300, velocity_y_300, time_300 = rk(5000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 300, 0.1)
 
-
-y_20, psi_20, lat_accel_20, position_x_20, position_y_20, velocity_x_20, velocity_y_20, time_20 = rk(3000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 20, 0.1)
-y_50, psi_50, lat_accel_50, position_x_50, position_y_50,velocity_x_50, velocity_y_50, time_50 = rk(3000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 50, 0.1)
-y_75, psi_75, lat_accel_75, position_x_75, position_y_75,velocity_x_75, velocity_y_75, time_75 = rk(3000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 75, 0.1)
-y_100, psi_100, lat_accel_100, position_x_100, position_y_100,velocity_x_100, velocity_y_100, time_100 = rk(3000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 100, 0.1)
-y_200, psi_200, lat_accel_200, position_x_200, position_y_200,velocity_x_200, velocity_y_200, time_200 = rk(3000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 200, 0.1)
-y_300, psi_300, lat_accel_300, position_x_300, position_y_300,velocity_x_300, velocity_y_300, time_300 = rk(3000, 0.01, 1400, 1.14, 1.33, 25000, 21000, 2420, 300, 0.1)
 
 
 
@@ -130,23 +128,21 @@ fig, axs = plt.subplots(2, figsize=(5,5))
 axs[0].set_title('Lateral acceleration vs time')
 axs[0].set_xlabel("Time (s)")
 axs[0].set_ylabel("Lateral Acceleration (m/s^2)")
-axs[0].plot(time_20, lat_accel_20, label = "20 km/h")
-axs[0].plot(time_50, lat_accel_50, label = "50 km/h")
-axs[0].plot(time_75, lat_accel_75, label = "75 km/h")
-axs[0].plot(time_100, lat_accel_100, label = "100 km/h")
 axs[0].plot(time_200, lat_accel_200, label = "200 km/h")
+axs[0].plot(time_220, lat_accel_220, label = "220 km/h")
+axs[0].plot(time_234, lat_accel_234, label = "234 km/h")
+axs[0].plot(time_250, lat_accel_250, label = "250 km/h")
 axs[0].plot(time_300, lat_accel_300, label = "300 km/h")
 axs[0].legend()
 axs[0].legend(loc="lower left")
 
-axs[1].set_title('Yaw Rate vs time')
+axs[1].set_title('Yaw rate vs time')
 axs[1].set_xlabel("Time (s)")
-axs[1].set_ylabel("Yaw Rate (Rad/s)")
-axs[1].plot(time_20, psi_20, label = "20 km/h")
-axs[1].plot(time_50, psi_50, label = "50 km/h")
-axs[1].plot(time_75, psi_75, label = "75 km/h")
-axs[1].plot(time_100, psi_100, label = "100 km/h")
+axs[1].set_ylabel("Yaw rate (rad/s)")
 axs[1].plot(time_200, psi_200, label = "200 km/h")
+axs[1].plot(time_220, psi_220, label = "220 km/h")
+axs[1].plot(time_234, psi_234, label = "234 km/h")
+axs[1].plot(time_250, psi_250, label = "250 km/h")
 axs[1].plot(time_300, psi_300, label = "300 km/h")
 axs[1].legend()
 axs[1].legend(loc="upper left")
