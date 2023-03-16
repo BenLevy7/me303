@@ -23,12 +23,13 @@ def Eigenvalue (mass, a, b, front_stiff, rear_stiff, yaw_inertia,):
         g = ((-(a**2*front_stiff+b**2*rear_stiff)/(yaw_inertia*velocity)))
         
         matrix = np.array([[d, e], [f, g]])
-        eigenvalues, w = eig(matrix)
-        velocity +=1
-        if ((eigenvalues >= 0).any()):
+        eigenvalues, eigenvectors = eig(matrix)
+        velocity += 0.1
+        print(eigenvalues)
+        if ((eigenvalues > 0).any()):
             break
 
-    return velocity
+    return velocity-1
 
 velocity = Eigenvalue(1400, 1.14, 1.33, 25000, 21000, 2420)
 print(velocity*3.6)
