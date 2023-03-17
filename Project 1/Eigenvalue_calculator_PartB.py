@@ -30,7 +30,7 @@ def Eigenvalue (mass, a, b, front_stiff, rear_stiff, yaw_inertia,):
         if ((eigenvalues > 0).any()): #if one or both of the eigenvalues are positive, stop the loop and return the velocity corresponding with the previous velocity (to ensure that max speed matches 2 negative eigenvalues)
             break
         velocity += 0.1
-        print(eigenvalues)
+        #print(eigenvalues)
 
     return velocity #Return the max velocity
 
